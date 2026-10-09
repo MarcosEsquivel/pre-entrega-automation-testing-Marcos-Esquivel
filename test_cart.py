@@ -19,7 +19,7 @@ def test_agregar_producto_carrito():
         boton_agregar.click()
 
         # 3. Verificar contador del carrito
-        badge_agregar = driver.find_element(By.CLASS_NAME, "shopping_cart_badge")
+        badge_carrito = driver.find_element(By.CLASS_NAME, "shopping_cart_badge")
         assert badge_carrito.text == "1"
 
         # 4. Navegar al carrito
