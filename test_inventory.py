@@ -6,7 +6,7 @@ def test_inventory():
     driver = webdriver.Chrome()
 
     try:
-        #login
+        # 1. login
         driver.get("https://www.saucedemo.com/")
 
         usuario = driver.find_element(By.ID,"user-name")
@@ -18,7 +18,7 @@ def test_inventory():
 
         boton_login.click()
 
-        # Verificar el titulo de pag
+        # 2. Verificar el titulo de pag
         assert driver.title == "Swag Labs"
 
         productos = driver.find_elements(By.CLASS_NAME, "inventory_item")
@@ -32,12 +32,12 @@ def test_inventory():
         assert nombre_producto == "Sauce Labs Backpack"
         assert precio_producto == "$29.99"
 
-        # Verificar menu hamburguesa
+        # 3.Verificar menu hamburguesa
         menu = driver.find_element(By.ID, "react-burger-menu-btn")
         
         assert menu.is_displayed()
 
-        # Verificar filtro
+        # 4. Verificar filtro
         filtro = driver.find_element(By.CLASS_NAME, "product_sort_container")
 
         assert filtro.is_displayed()
