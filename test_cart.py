@@ -27,3 +27,10 @@ def test_agregar_producto_carrito():
         link_carrito.click()
 
         assert "/cart.html" in driver.current_url
+
+        #5. Comprobar producto en el carrito
+        nombre_producto_carrito = driver.find_element(By.CLASS_NAME,"inventory_item_name").text
+        assert nombre_producto_carrito == nombre_producto_inventario
+
+    finally:
+        driver.quit()    
